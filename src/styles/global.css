@@ -1,0 +1,303 @@
+@import "tailwindcss";
+
+@theme {
+  /* ==================== COLORS ==================== */
+  --color-gold: #d4a843;
+  --color-gold-light: #f5d77a;
+  --color-gold-dark: #b8922f;
+  --color-dark: #0a0a0a;
+  --color-dark-card: oklch(0.18 0.02 270);
+  --color-dark-card-light: oklch(0.22 0.02 270);
+  --color-main: red;
+  --color-yellow: #EBBD38;
+  --color-black: #181818;
+  --color-primary: #0d0d0d;
+
+  /* ==================== FONTS ==================== */
+  --font-sans: "Raleway", sans-serif;
+  --font-inter: "Inter Tight", sans-serif;
+
+  /* ==================== RESPONSIVE BREAKPOINTS ==================== */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1281px;
+  --breakpoint-2xl: 1380px;
+  --breakpoint-3xl: 1601px;
+  --breakpoint-4xl: 1769px;
+
+  /* ==================== BORDER RADIUS ==================== */
+  --radius-1: 1px;
+  --radius-2: 2px;
+  --radius-3: 3px;
+  --radius-4: 4px;
+  --radius-5: 5px;
+  --radius-6: 6px;
+  --radius-7: 7px;
+  --radius-8: 8px;
+  --radius-9: 9px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-14: 14px;
+  --radius-16: 16px;
+  --radius-18: 18px;
+  --radius-20: 20px;
+  --radius-22: 22px;
+  --radius-24: 24px;
+  --radius-26: 26px;
+  --radius-28: 28px;
+  --radius-30: 30px;
+  --radius-32: 32px;
+  --radius-34: 34px;
+  --radius-36: 36px;
+  --radius-38: 38px;
+  --radius-40: 40px;
+  --radius-full: 9999px;
+
+  /* ==================== Z-INDEX ==================== */
+  --z-1: 1;
+  --z-2: 2;
+  --z-3: 3;
+  --z-4: 4;
+  --z-5: 5;
+  --z-6: 6;
+  --z-7: 7;
+  --z-8: 8;
+  --z-9: 9;
+  --z-10: 10;
+
+  /* ==================== OPACITY ==================== */
+  --opacity-0: 0;
+  --opacity-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-15: 0.15;
+  --opacity-20: 0.2;
+  --opacity-25: 0.25;
+  --opacity-30: 0.3;
+  --opacity-35: 0.35;
+  --opacity-40: 0.4;
+  --opacity-45: 0.45;
+  --opacity-50: 0.5;
+  --opacity-55: 0.55;
+  --opacity-60: 0.6;
+  --opacity-65: 0.65;
+  --opacity-70: 0.7;
+  --opacity-75: 0.75;
+  --opacity-80: 0.8;
+  --opacity-85: 0.85;
+  --opacity-90: 0.9;
+  --opacity-95: 0.95;
+  --opacity-100: 1;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-inter);
+    background-color: var(--color-dark);
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    line-height: normal;
+    font-size: 18px;
+  }
+
+  @media (max-width: 1768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    body {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 1366px) {
+    body {
+      font-size: 14px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: inherit;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+    color: black;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--color-gold) 40%, transparent);
+  }
+
+  .btn-gold-outline {
+    background: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold-outline:hover {
+    background: var(--color-gold);
+    color: black;
+  }
+
+  .card {
+    background: var(--color-dark-card);
+    border-radius: 1rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  .card-light {
+    background: var(--color-dark-card-light);
+    border-radius: 1rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  .bg-gradient {
+    background: linear-gradient(180deg, rgba(235, 189, 56, 0.1) 0%, rgba(235, 189, 56, 0) 100%);
+  }
+
+  .button-gradient {
+    position: relative;
+  }
+
+  .button-gradient:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url("../images/button-gradient.png") no-repeat center;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* ==================== CUSTOM FONT SIZES ==================== */
+.text-10 { font-size: 10px !important; }
+.text-11 { font-size: 11px !important; }
+.text-12 { font-size: 12px !important; }
+.text-13 { font-size: 13px !important; }
+.text-14 { font-size: 14px !important; }
+.text-15 { font-size: 15px !important; }
+.text-16 { font-size: 16px !important; }
+.text-17 { font-size: 17px !important; }
+.text-18 { font-size: 18px !important; }
+.text-19 { font-size: 19px !important; }
+.text-20 { font-size: 20px !important; }
+.text-21 { font-size: 21px !important; }
+.text-22 { font-size: 22px !important; }
+.text-23 { font-size: 23px !important; }
+.text-24 { font-size: 24px !important; }
+.text-25 { font-size: 25px !important; }
+.text-26 { font-size: 26px !important; }
+.text-27 { font-size: 27px !important; }
+.text-28 { font-size: 28px !important; }
+.text-29 { font-size: 29px !important; }
+.text-30 { font-size: 30px !important; }
+.text-32 { font-size: 32px !important; }
+.text-34 { font-size: 34px !important; }
+.text-36 { font-size: 36px !important; }
+.text-38 { font-size: 38px !important; }
+.text-40 { font-size: 40px !important; }
+.text-42 { font-size: 42px !important; }
+.text-44 { font-size: 44px !important; }
+.text-46 { font-size: 46px !important; }
+.text-48 { font-size: 48px !important; }
+
+/* ==================== 2XL BREAKPOINT: ≥1380px ==================== */
+@media (min-width: 1380px) {
+  .\32xl\:text-10 { font-size: 10px !important; }
+  .\32xl\:text-11 { font-size: 11px !important; }
+  .\32xl\:text-12 { font-size: 12px !important; }
+  .\32xl\:text-13 { font-size: 13px !important; }
+  .\32xl\:text-14 { font-size: 14px !important; }
+  .\32xl\:text-15 { font-size: 15px !important; }
+  .\32xl\:text-16 { font-size: 16px !important; }
+  .\32xl\:text-17 { font-size: 17px !important; }
+  .\32xl\:text-18 { font-size: 18px !important; }
+  .\32xl\:text-19 { font-size: 19px !important; }
+  .\32xl\:text-20 { font-size: 20px !important; }
+  .\32xl\:text-22 { font-size: 22px !important; }
+  .\32xl\:text-24 { font-size: 24px !important; }
+  .\32xl\:text-26 { font-size: 26px !important; }
+  .\32xl\:text-28 { font-size: 28px !important; }
+  .\32xl\:text-30 { font-size: 30px !important; }
+  .\32xl\:text-32 { font-size: 32px !important; }
+  .\32xl\:text-36 { font-size: 36px !important; }
+  .\32xl\:text-40 { font-size: 40px !important; }
+  .\32xl\:text-44 { font-size: 44px !important; }
+  .\32xl\:text-48 { font-size: 48px !important; }
+}
+
+/* ==================== 3XL BREAKPOINT: ≥1601px ==================== */
+@media (min-width: 1601px) {
+  .\33xl\:text-10 { font-size: 10px !important; }
+  .\33xl\:text-11 { font-size: 11px !important; }
+  .\33xl\:text-12 { font-size: 12px !important; }
+  .\33xl\:text-13 { font-size: 13px !important; }
+  .\33xl\:text-14 { font-size: 14px !important; }
+  .\33xl\:text-15 { font-size: 15px !important; }
+  .\33xl\:text-16 { font-size: 16px !important; }
+  .\33xl\:text-17 { font-size: 17px !important; }
+  .\33xl\:text-18 { font-size: 18px !important; }
+  .\33xl\:text-19 { font-size: 19px !important; }
+  .\33xl\:text-20 { font-size: 20px !important; }
+  .\33xl\:text-22 { font-size: 22px !important; }
+  .\33xl\:text-24 { font-size: 24px !important; }
+  .\33xl\:text-26 { font-size: 26px !important; }
+  .\33xl\:text-28 { font-size: 28px !important; }
+  .\33xl\:text-30 { font-size: 30px !important; }
+  .\33xl\:text-32 { font-size: 32px !important; }
+  .\33xl\:text-36 { font-size: 36px !important; }
+  .\33xl\:text-40 { font-size: 40px !important; }
+  .\33xl\:text-44 { font-size: 44px !important; }
+  .\33xl\:text-48 { font-size: 48px !important; }
+}
+
+/* ==================== 4XL BREAKPOINT: ≥1769px ==================== */
+@media (min-width: 1769px) {
+  .\34xl\:text-10 { font-size: 10px !important; }
+  .\34xl\:text-11 { font-size: 11px !important; }
+  .\34xl\:text-12 { font-size: 12px !important; }
+  .\34xl\:text-13 { font-size: 13px !important; }
+  .\34xl\:text-14 { font-size: 14px !important; }
+  .\34xl\:text-15 { font-size: 15px !important; }
+  .\34xl\:text-16 { font-size: 16px !important; }
+  .\34xl\:text-17 { font-size: 17px !important; }
+  .\34xl\:text-18 { font-size: 18px !important; }
+  .\34xl\:text-19 { font-size: 19px !important; }
+  .\34xl\:text-20 { font-size: 20px !important; }
+  .\34xl\:text-22 { font-size: 22px !important; }
+  .\34xl\:text-24 { font-size: 24px !important; }
+  .\34xl\:text-26 { font-size: 26px !important; }
+  .\34xl\:text-28 { font-size: 28px !important; }
+  .\34xl\:text-30 { font-size: 30px !important; }
+  .\34xl\:text-32 { font-size: 32px !important; }
+  .\34xl\:text-36 { font-size: 36px !important; }
+  .\34xl\:text-40 { font-size: 40px !important; }
+  .\34xl\:text-44 { font-size: 44px !important; }
+  .\34xl\:text-48 { font-size: 48px !important; }
+}
