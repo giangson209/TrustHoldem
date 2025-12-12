@@ -19,8 +19,8 @@ const HeroSection: React.FC = () => {
 
     return (
         <section className="slideHero relative w-full opacity-0 slide-up slide-up-2">
-            <div className="absolute top-0 left-[-24px] 2xl:left-[-32px] 3xl:left-[-36px] 4xl:left-[-47px] h-full flex items-center z-4 pt-10 pointer-events-none">
-                <img src="/images/heart-slide.png" className="w-12 2xl:w-16 3xl:w-[72px] 4xl:w-[94px]" alt=""/>
+            <div className="absolute top-0 left-[-47px] h-full flex items-center z-4 pt-10 pointer-events-none">
+                <img src="/images/heart-slide.png" className="w-[94px]" alt=""/>
             </div>
             <img src="/images/slide-1.png" className="w-full opacity-0" alt=""/>
             <div className="absolute top-0 left-0 w-full h-full z-2">
