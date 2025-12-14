@@ -28,7 +28,7 @@ const Login: React.FC<LoginProps> = ({ onBack }) => {
     }
 
     return (
-        <div className="bg-[#0F0F0F] p-4 rounded-32 relative h-full slide-up-2 border-0">
+        <div className="bg-[#0F0F0F] p-4 rounded-32 relative h-full border-0">
             <img src="/images/card-modal.png" className="absolute top-0 left-0 w-full h-full pointer-events-none block" alt=""/>
             <img src="/images/border-gradient.png" className="absolute top-0 left-0 w-full h-full pointer-events-none block" alt=""/>
             <div className="flex items-center justify-center w-full h-full p-6 text-center absolute top-0 left-0 z-3 font-semibold">

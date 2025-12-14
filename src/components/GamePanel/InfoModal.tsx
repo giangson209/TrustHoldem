@@ -7,7 +7,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ onClose }) => {
 
     return (
         <section>
-            <div className="absolute top-0 right-0 z-3">
+            <div className="absolute top-16 right-0 z-3">
                 <img src="/images/cart-single.png" className="w-full max-w-120" alt=""/>
                 <div className="absolute top-0 left-0 z-2 w-full">
                     <div className="p-8 font-bold text-24 text-white">

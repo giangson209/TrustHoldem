@@ -109,8 +109,22 @@ body input:focus {
   background-image: none;
 }
 
+.close img {
+  cursor: pointer;
+}
 .close img:hover {
   transform: scale(1.08);
+}
+
+.tableList::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.tableList::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+.tableList::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */

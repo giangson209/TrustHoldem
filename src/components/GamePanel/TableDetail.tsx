@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface JoinGameProps {
     onBack: () => void;
 }
 
 const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
+    const [blindValue, setBlindValue] = useState('100');
+
+    const minGold = (parseInt(blindValue) * 100).toLocaleString('ko-KR');
+
+    const handleBlindChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setBlindValue(e.target.value);
+    };
 
     return (
         <section className="mt-3 font-medium">
@@ -15,7 +22,7 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
                     <h2 className="text-28 font-bold text-white py-3 px-10 font-sans">테이블 만들기</h2>
                     <div
                         onClick={onBack}
-                        className="close absolute top-0 right-4 cursor-pointer h-full flex items-center"
+                        className="close absolute top-0 right-4 cursor-pointer h-full flex items-center hover:scale-110 transition-all"
                     >
                         <img src="/images/close.png" alt=""/>
                     </div>
@@ -35,17 +42,24 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
                                 </div>
                             </div>
                         </div>
+
                         <div className="item flex items-center justify-between">
                             <div className="item flex items-center">
-                                <div className="w-full flex-[0_0_152px] pr-2 font-bold text-white text-left">테이블 제목</div>
+                                <div className="w-full flex-[0_0_152px] pr-2 font-bold text-white text-left">블라인드</div>
                                 <div className="w-full flex-[0_0_180px] relative">
                                     <select
-                                        name="" id=""
-                                        className="w-full bg-[#090702] border border-[rgb(255_255_255/50%)] font-normal text-white rounded-[48px] pl-5 pr-16 h-11.5 outline-0 hide-appearance">
-                                        <option value="">100 G</option>
-                                        <option value="">200 G</option>
-                                        <option value="">300 G</option>
-                                        <option value="">400 G</option>
+                                        name=""
+                                        id=""
+                                        value={blindValue}
+                                        onChange={handleBlindChange}
+                                        className="w-full bg-[#090702] border border-[rgb(255_255_255/50%)] font-normal text-white rounded-[48px] pl-5 pr-16 h-11.5 outline-0 hide-appearance"
+                                    >
+                                        <option value="100">100 G</option>
+                                        <option value="200">200 G</option>
+                                        <option value="500">500 G</option>
+                                        <option value="1000">1000 G</option>
+                                        <option value="2000">2000 G</option>
+                                        <option value="5000">5000 G</option>
                                     </select>
                                     <div className="absolute top-0 right-5 flex items-center h-full pointer-events-none">
                                         <img src="/images/icon-select.svg" alt=""/>
@@ -57,13 +71,14 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
                                 <div className="w-full flex-[0_0_180px] relative">
                                     <input
                                         type="text"
-                                        className="w-full bg-[#090702] border border-[rgb(255_255_255/50%)] font-normal text-white rounded-[48px] pl-5 pr-16 h-11.5 outline-0 font-normal"
-                                        placeholder="10,000 G"
-                                        value="10,000 G"
+                                        className="w-full bg-[#090702] border border-[rgb(255_255_255/50%)] font-normal text-white rounded-[48px] pl-5 pr-5 h-11.5 outline-0"
+                                        value={`${minGold} G`}
+                                        readOnly
                                     />
                                 </div>
                             </div>
                         </div>
+
                         <div className="item flex items-center justify-between">
                             <div className="item flex items-center">
                                 <div className="w-full flex-[0_0_152px] pr-2 font-bold text-white text-left">참가 인원</div>
@@ -86,15 +101,21 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
                                 <div className="w-full flex-[0_0_180px] relative">
                                     <input
                                         type="text"
-                                        className="w-full bg-[#090702] border border-[rgb(255_255_255/50%)] font-normal text-white rounded-[48px] pl-5 pr-16 h-11.5 outline-0 font-normal"
+                                        className="w-full bg-[#090702] border border-[rgb(255_255_255/50%)] font-normal text-white rounded-[48px] pl-5 pr-5 h-11.5 outline-0"
                                         placeholder="2자리 이상"
                                     />
                                 </div>
                             </div>
                         </div>
+
                         <div className="item flex items-center justify-center gap-4 font-semibold pt-4 pb-2 border-t border-[#ffffff1a]">
-                            <button className="w-full max-w-59 bg-gradient border border-yellow rounded-[48px] text-black h-11.5 transition-all hover:scale-[1.03] btn-login">로그인 하세요</button>
-                            <button className="w-full max-w-59 border border-yellow rounded-[48px] text-yellow h-11.5 transition-all hover:scale-[1.03] btn-register">로그인 하세요</button>
+                            <button className="w-full max-w-59 bg-gradient border border-yellow rounded-[48px] text-black h-11.5 transition-all hover:scale-[1.03] btn-login">테이블 만들기</button>
+                            <button
+                                onClick={onBack}
+                                className="w-full max-w-59 border border-yellow rounded-[48px] text-yellow h-11.5 transition-all hover:scale-[1.03] btn-register"
+                            >
+                                취소
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -5,18 +5,14 @@ export default function AutoScaleLayout({ children }) {
 
     useEffect(() => {
         function scaleUI() {
-            // Nếu màn hình nhỏ hơn 1024px: không scale
             if (window.innerWidth >= 768) {
-                // Chỉ scale trên màn >= 1024px
                 const designWidth = 1920;
                 const designHeight = 900;
 
                 const scaleX = window.innerWidth / designWidth;
                 const scaleY = window.innerHeight / designHeight;
-
                 let scale = Math.min(scaleX, scaleY);
 
-                // Màn hình lớn: không scale
                 if (window.innerWidth >= 1800 && window.innerHeight >= 950) {
                     scale = 1;
                 }
@@ -25,7 +21,6 @@ export default function AutoScaleLayout({ children }) {
                     ref.current.style.transform = `scale(${scale})`;
                 }
             }
-
 
         }
 

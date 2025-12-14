@@ -18,7 +18,7 @@ const HeroSection: React.FC = () => {
     }, []);
 
     return (
-        <section className="slideHero relative w-full opacity-0 slide-up slide-up-2">
+        <section className="slideHero relative w-full">
             <div className="absolute top-0 left-[-47px] h-full flex items-center z-4 pt-10 pointer-events-none">
                 <img src="/images/heart-slide.png" className="w-[94px]" alt=""/>
             </div>

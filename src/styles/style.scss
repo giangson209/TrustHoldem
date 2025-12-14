@@ -114,8 +114,22 @@ body {
 
 .close {
   img {
+    cursor: pointer;
     &:hover {
       transform: scale(1.08);
     }
+  }
+}
+
+.tableList {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
   }
 }
