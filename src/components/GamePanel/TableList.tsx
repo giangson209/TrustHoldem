@@ -94,7 +94,9 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
                       {room.isPrivate ? (
                           <td className="px-4 py-[7px]" colSpan={2}>
                             <div className="flex items-center justify-center gap-3">
-                              <button className="button-gradient px-9 py-2 text-black rounded-full font-semibold transition-all hover:scale-[1.08] bg-[linear-gradient(180deg,#EBBD38_0%,#AE760D_100%)]">
+                              <button
+                                  onClick={() => setShowInfoModal(true)}
+                                  className="button-gradient px-9 py-2 text-black rounded-full font-semibold transition-all hover:scale-[1.08] bg-[linear-gradient(180deg,#EBBD38_0%,#AE760D_100%)]">
                                 입장
                               </button>
                             </div>
@@ -108,7 +110,6 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
                             </td>
                             <td className="px-3 py-[7px]">
                               <button
-                                  onClick={() => setShowInfoModal(true)}
                                   className="button-gradient px-9 py-2 text-gold rounded-full font-semibold transition-all hover:scale-[1.08]"
                               >
                                 관전
