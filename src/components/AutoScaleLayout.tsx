@@ -37,10 +37,11 @@ export default function AutoScaleLayout({ children }) {
             style={{
                 width: "100vw",
                 height: "100vh",
-                overflow: "hidden",
+                overflowX: "hidden",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "start",
+                paddingBottom: "12px",
             }}
         >
             <div

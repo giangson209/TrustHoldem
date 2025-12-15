@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useModal } from '../../contexts/ModalContext';
 import InfoModal from './InfoModal';
 
 interface JoinGameProps {
@@ -19,6 +19,8 @@ interface TableRoom {
 
 const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
   const [showInfoModal, setShowInfoModal] = useState(false);
+
+  const { openModal } = useModal();
 
   const tableData: TableRoom[] = [
     { no: 15, status: '참여가능', isPrivate: false, bb: 100, minGold: '10000 G', title: '즐겁게 올인', players: '2/7', canJoin: true },
@@ -48,11 +50,13 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
   };
 
   return (
+      <>
+        {showInfoModal && <InfoModal onClose={() => setShowInfoModal(false)} />}
       <section className="mt-3 font-medium">
-        <div className="relative block overflow-hidden rounded-32">
-          <img src="/images/bg-table.png" className="absolute top-0 left-0 w-full h-full object-bottom" alt=""/>
+        <div className="relative block overflow-hidden rounded-32 border border-[#fff3]">
+          <img src="/images/bg-table-2.png" className="absolute top-0 left-0 w-full h-full object-bottom" alt=""/>
 
-          {showInfoModal && <InfoModal onClose={() => setShowInfoModal(false)} />}
+
 
           <div className="relative z-2">
             <img src="/images/patten.png" className="absolute left-0 top-0 w-full h-full object-cover pointer-events-none" alt=""/>
@@ -65,7 +69,7 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
             </div>
           </div>
           <div className="text-center px-6 pb-3 pt-2 relative z-2">
-            <div className="tableList overflow-auto overflow-x-hidden h-68">
+            <div className="tableList overflow-auto overflow-x-hidden">
               <table className="w-full table-rooms">
                 <thead>
                 <tr className="bg-[#EBBD381A] border-b border-solid border-[#FFFFFF1A] text-20">
@@ -95,7 +99,7 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
                           <td className="px-4 py-[7px]" colSpan={2}>
                             <div className="flex items-center justify-center gap-3">
                               <button
-                                  onClick={() => setShowInfoModal(true)}
+                                  onClick={() => openModal('inforoomtable')}
                                   className="button-gradient px-9 py-2 text-black rounded-full font-semibold transition-all hover:scale-[1.08] bg-[linear-gradient(180deg,#EBBD38_0%,#AE760D_100%)]">
                                 입장
                               </button>
@@ -125,6 +129,7 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
           </div>
         </div>
       </section>
+      </>
   );
 };
 

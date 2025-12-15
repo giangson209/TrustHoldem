@@ -92,7 +92,7 @@ const LoginSuccess: React.FC = () => {
                         className="relative border border-1 border-[#3E3E3E] bg-[#000000] text-white rounded-full  transition-all hover:scale-[1.04]"
                     >
                         <img src="/images/btn-main.png" className=" opacity-0" alt=""/>
-                        <span className="absolute top-0 left-0 w-full h-full z-2 flex items-center justify-center rounded-20">내점보</span>
+                        <span className="absolute top-0 left-0 w-full h-full z-2 flex items-center justify-center rounded-20">내정보</span>
                         <span className="absolute bottom-[-1px] left-0 w-full z-3 flex items-center justify-center">
                             <img src="/images/line.svg" alt=""/>
                         </span>

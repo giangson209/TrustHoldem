@@ -19,22 +19,22 @@ const CompExchange: React.FC<RefillGoldProps> = ({ onClose }) => {
                         </div>
                         <div className="pt-16 pb-12 text-center relative z-2">
                             <div className="text-24 !leading-[1.5] font-semibold">
-                                <p>게임머니를 환전 하시겠습니까?</p>
+                                <p>콜트를 교환 하시겠습니까?</p>
                             </div>
                             <ul className="font-bold w-106 m-auto pt-10">
                                 <li className="mb-6 last:mb-0 flex items-center gap-4">
-                                    <span className="w-34 text-18 text-left">누적획득골드</span>
-                                    <span className="text-gold text-28 relative w-[calc(100%-136px)]">+ 3,000,000,000 C</span>
+                                    <span className="w-34 text-18 text-left">현재 보유 콜트</span>
+                                    <span className="text-gold text-28 relative w-[calc(100%-136px)]">123,112,345 C</span>
                                 </li>
                                 <li className="mb-6 last:mb-0 flex items-center gap-4">
-                                    <span className="w-34 text-18 text-left">누적획득골드</span>
+                                    <span className="w-34 text-18 text-left">교환할 콜트선택</span>
                                     <span className="text-gold text-20 relative w-[calc(100%-136px)]">
                                         <select className="w-full bg-[#090702] border border-[rgb(255_255_255/50%)] font-normal text-white rounded-[48px] pl-5 pr-16 h-11.5 outline-0 hide-appearance">
-                                            <option value="">10000 C</option>
-                                            <option value="">20000 C</option>
-                                            <option value="">30000 C</option>
-                                            <option value="">40000 C</option>
-                                            <option value="">50000 C</option>
+                                            <option value="">10,000 C</option>
+                                            <option value="">20,000 C</option>
+                                            <option value="">30,000 C</option>
+                                            <option value="">40,000 C</option>
+                                            <option value="">50,000 C</option>
                                         </select>
                                         <div className="absolute top-0 right-5 flex items-center h-full pointer-events-none">
                                             <img src="/images/icon-select.svg" alt=""/>
@@ -44,7 +44,7 @@ const CompExchange: React.FC<RefillGoldProps> = ({ onClose }) => {
                             </ul>
                             <div className="mt-10 flex items-center justify-center gap-5">
                                 <button onClick={onClose} className="min-w-50 font-semibold border border-yellow rounded-[48px] text-yellow h-15 transition-all hover:scale-[1.05] btn-login text-18">취소</button>
-                                <button className="min-w-50 font-semibold bg-gradient border border-yellow rounded-[48px] text-black h-15 transition-all hover:scale-[1.05] btn-login text-18">확인</button>
+                                <button className="min-w-50 font-semibold bg-gradient border border-yellow rounded-[48px] text-black h-15 transition-all hover:scale-[1.05] btn-login text-18">교환</button>
                             </div>
                         </div>
                     </div>
