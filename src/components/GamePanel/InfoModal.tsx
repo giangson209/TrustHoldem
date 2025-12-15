@@ -6,8 +6,10 @@ interface InfoModalProps {
 const InfoModal: React.FC<InfoModalProps> = ({ onClose }) => {
 
     return (
-        <section>
-            <div className="absolute top-16 right-0 z-3">
+        <section className="absolute left-0 top-0 w-full h-full z-3 flex items-center justify-center">
+            <div onClick={onClose} className="absolute bg-[#000c] top-0 left-0 w-full h-full"></div>
+            {/*<div className="absolute top-16 right-0 z-3">*/}
+            <div className="relative max-w-120 w-full z-2">
                 <img src="/images/cart-single.png" className="w-full max-w-120" alt=""/>
                 <div className="absolute top-0 left-0 z-2 w-full">
                     <div className="p-8 font-bold text-24 text-white">

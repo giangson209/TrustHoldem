@@ -78,7 +78,7 @@ const TableList: React.FC<JoinGameProps> = ({ onBack }) => {
                 </thead>
                 <tbody>
                 {tableData.map((room) => (
-                    <tr key={room.no} className={`border-b border-solid border-[#FFFFFF1A] ${room.isPrivate === true ? 'bg-[#860508]' : ''}`}>
+                    <tr key={room.no} className={`border-b border-solid border-[#FFFFFF1A] ${room.isPrivate === true ? 'bg-[#ff292d33]' : ''}`}>
                       <td className="px-4 py-[7px] text-white">{room.no}</td>
                       <td className="px-4 py-[7px]">
                         <span className={`inline-flex items-center gap-1`}>
