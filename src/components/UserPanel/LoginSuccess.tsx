@@ -71,7 +71,12 @@ const LoginSuccess: React.FC = () => {
                             <p>10승 2패 <span className="text-yellow">(+ 1,200 G)</span></p>
                         </div>
                         <div className="mt-0">
-                            <button className="border border-1.5 border-yellow px-4 py-2 text-yellow rounded-full font-semibold transition-all hover:scale-[1.04] ">콤프환전 12,345C</button>
+                            <button
+                                onClick={() => openModal('compexchange')}
+                                className="border border-1.5 border-yellow px-4 py-2 text-yellow rounded-full font-semibold transition-all hover:scale-[1.04] "
+                            >
+                                콤프환전 12,345C
+                            </button>
                         </div>
                     </div>
                 </div>
