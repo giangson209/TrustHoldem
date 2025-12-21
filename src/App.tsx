@@ -21,6 +21,9 @@ import CompExchange from './components/Modal/CompExchange';
 
 import InfoModaTable from './components/GamePanel/InfoModal';
 
+import Login from './components/Modal/Login';
+import LoginTable from './components/Modal/LoginTable';
+
 const App: React.FC = () => {
     const { activeModal, closeModal } = useModal();
 
@@ -67,6 +70,8 @@ const App: React.FC = () => {
             {activeModal === 'changepass' && <ChangePassword onClose={closeModal} />}
             {activeModal === 'compexchange' && <CompExchange onClose={closeModal} />}
             {activeModal === 'inforoomtable' && <InfoModaTable onClose={closeModal} />}
+            {activeModal === 'login' && <Login onClose={closeModal} />}
+            {activeModal === 'logintable' && <LoginTable onClose={closeModal} />}
         </>
     );
 };

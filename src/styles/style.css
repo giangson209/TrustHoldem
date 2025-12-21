@@ -127,4 +127,17 @@ body input:focus {
   background-color: transparent;
 }
 
+.dropdown-scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+.dropdown-scroll::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+.dropdown-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 /*# sourceMappingURL=style.css.map */

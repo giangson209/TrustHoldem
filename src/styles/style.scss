@@ -133,3 +133,18 @@ body {
     background-color: transparent;
   }
 }
+
+.dropdown-scroll {
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(255 255 255/50%);
+  }
+}

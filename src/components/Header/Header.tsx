@@ -4,6 +4,16 @@ import { useModal } from '../../contexts/ModalContext';
 const Header: React.FC = () => {
   const { openModal } = useModal();
 
+  const handleGameReview = () => {
+    const isLoggedIn = true;
+
+    if (isLoggedIn) {
+      openModal('logintable');
+    } else {
+      openModal('login');
+    }
+  };
+
   return (
       <header className="w-full opacity-0 slide-up">
         <div className="logo absolute top-0 left-[-200px] mb-0">
@@ -20,6 +30,7 @@ const Header: React.FC = () => {
             </div>
             <div className="item col-span-3 text-right flex items-center justify-end">
               <button
+                  onClick={handleGameReview}
                   className="relative inline-block text-center text-yellow font-bold text-20 btn-heartbeat scale-[1]"
               >
                 <img src="/images/btn-main.png" className="h-[auto]" alt=""/>
