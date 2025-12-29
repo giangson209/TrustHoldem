@@ -41,22 +41,34 @@ const Infomation: React.FC<ModalProps> = ({ onClose }) => {
                                 </ul>
                             </div>
                             <div className="mt-6">
-                                <div className="item mb-6 last:mb-0">
-                                    <button
-                                        onClick={() => openModal('changepass')}
-                                        className="min-w-102 font-semibold bg-gradient border border-yellow rounded-[48px] text-black h-15 transition-all hover:scale-[1.05] btn-login text-18"
-                                    >
-                                        비밀번호 수정
-                                    </button>
+                                <div className="grid grid-cols-2 gap-6">
+                                    <div className="item mb-6">
+                                        <button
+                                            onClick={() => openModal('messages')}
+                                            className="w-full font-semibold bg-gradient border border-yellow rounded-[48px] text-black h-15 transition-all hover:scale-[1.05] btn-login text-18"
+                                        >
+                                            내 쪽지함 (2)
+                                        </button>
+                                    </div>
+                                    <div className="item mb-6">
+                                        <button
+                                            onClick={() => openModal('changepass')}
+                                            className="w-full font-semibold bg-gradient border border-yellow rounded-[48px] text-black h-15 transition-all hover:scale-[1.05] btn-login text-18"
+                                        >
+                                            비밀번호 수정
+                                        </button>
+                                    </div>
+
                                 </div>
-                                <div className="item mb-6 last:mb-0">
-                                    <button
-                                        onClick={() => openModal('withdrawmembership')}
-                                        className="min-w-102 font-semibold border border-yellow rounded-[48px] text-yellow h-15 transition-all hover:scale-[1.05] btn-login text-18"
-                                    >
-                                        회원 탈퇴
-                                    </button>
-                                </div>
+
+                                {/*<div className="item mb-6 last:mb-0">*/}
+                                {/*    <button*/}
+                                {/*        onClick={() => openModal('withdrawmembership')}*/}
+                                {/*        className="min-w-102 font-semibold border border-yellow rounded-[48px] text-yellow h-15 transition-all hover:scale-[1.05] btn-login text-18"*/}
+                                {/*    >*/}
+                                {/*        회원 탈퇴*/}
+                                {/*    </button>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                     </div>

@@ -18,6 +18,7 @@ import WithdrawMembership from './components/Modal/WithdrawMembership';
 import Infomation from './components/Modal/Infomation';
 import ChangePassword from './components/Modal/ChangePassword';
 import CompExchange from './components/Modal/CompExchange';
+import Messages from './components/Modal/Messages';
 
 import InfoModaTable from './components/GamePanel/InfoModal';
 
@@ -72,6 +73,7 @@ const App: React.FC = () => {
             {activeModal === 'inforoomtable' && <InfoModaTable onClose={closeModal} />}
             {activeModal === 'login' && <Login onClose={closeModal} />}
             {activeModal === 'logintable' && <LoginTable onClose={closeModal} />}
+            {activeModal === 'messages' && <Messages onClose={closeModal} />}
         </>
     );
 };
