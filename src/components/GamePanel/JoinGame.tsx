@@ -24,6 +24,9 @@ const TableList: React.FC = () => {
                     <h2 className="text-44 font-bold text-white font-sans">
                         JOIN GAME
                     </h2>
+                    <div className="item">
+                        <img src="/images/jackpot.png" alt=""/>
+                    </div>
                     <button
                         onClick={() => setShowTableInfo(true)}
                         className="flex items-center justify-center text-black bg-gradient border border-yellow border-yellow px-17 py-[10px] rounded-full font-semibold transition-all hover:scale-[1.04]"

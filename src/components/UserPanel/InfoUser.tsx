@@ -1,10 +1,35 @@
 import React, { useState } from 'react';
+import { useModal } from '../../contexts/ModalContext';
 
 interface InfoUserProps {
     onBack: () => void;
 }
 
 const InfoUser: React.FC<InfoUserProps> = ({ onBack }) => {
+    const { openModal } = useModal();
+
+    const [depositAmount, setDepositAmount] = useState('');
+    const [withdrawAmount, setWithdrawAmount] = useState('');
+
+    const availableGold = 12345678;
+    const storedGold = 3000000000;
+
+    const formatNumber = (num: number) => {
+        return num.toLocaleString('ko-KR');
+    };
+
+    const handleMaxDeposit = () => {
+        setDepositAmount(availableGold.toString());
+    };
+
+    const handleMaxWithdraw = () => {
+        setWithdrawAmount(storedGold.toString());
+    };
+
+    const handleInputChange = (value: string, setter: React.Dispatch<React.SetStateAction<string>>) => {
+        const numericValue = value.replace(/[^0-9]/g, '');
+        setter(numericValue);
+    };
 
     return (
         <div className="bg-[#0F0F0F] border-gradient p-4 rounded-32 relative h-full">
@@ -21,14 +46,19 @@ const InfoUser: React.FC<InfoUserProps> = ({ onBack }) => {
                 <div className="relative rounded-[0_0_32px_32px] border border-t-0 border-solid border-[#282828] overflow-hidden">
                     <div className="relative top-0 left-0 w-full h-full flex items-center px-6 py-6">
                         <img src="/images/bg-userPanel.png" className="w-full absolute top-0 left-0 object-cover" alt=""/>
-                        <ul className="relative z-2">
+                        <ul className="relative z-2 w-full">
                             <li className="flex items-center gap-4 font-bold mb-4 last:mb-0">
                                 <span className="text-white">보유골드 </span>
-                                <label className="text-yellow text-28">3,000,000,000G</label>
+                                <label className="text-yellow text-28">{formatNumber(availableGold)}G</label>
+                                <button
+                                    onClick={() => openModal('withdrawalsettings')}
+                                    className="text-yellow font-semibold text-center h-12 px-6 ml-2 rounded-40 border border-[1.5] border-solid border-yellow !itransition-all hover:text-black hover:bg-yellow">
+                                    입출금 한도 설정
+                                </button>
                             </li>
                             <li className="flex items-center gap-4 font-bold mb-4 last:mb-0">
                                 <span className="text-white">보관중인 골드 </span>
-                                <label className="text-yellow text-28">3,000,000,000G</label>
+                                <label className="text-yellow text-28">{formatNumber(storedGold)}G</label>
                             </li>
                         </ul>
                     </div>
@@ -36,22 +66,48 @@ const InfoUser: React.FC<InfoUserProps> = ({ onBack }) => {
 
                 <div className="mt-4">
                     <div className="grid grid-cols-12 gap-6 px-5 mb-5 last:mb-0">
-                        <div className="item col-span-3">
-                            <span className="text-white font-bold flex items-center h-full">보관하기  </span>
+                        <div className="item col-span-2">
+                            <span className="text-white font-bold flex items-center h-full">보관하기 </span>
                         </div>
-                        <div className="item col-span-6">
-                            <input type="text" placeholder="숫자만 입력" className="w-full h-12 px-4 border border-solid border-[#FFFFFF80] rounded-40 font-regular text-16"/>
+                        <div className="item col-span-7 relative">
+                            <input
+                                type="text"
+                                placeholder="숫자만 입력"
+                                value={depositAmount}
+                                onChange={(e) => handleInputChange(e.target.value, setDepositAmount)}
+                                className="w-full h-12 px-4 border border-solid border-[#FFFFFF80] rounded-40 font-regular text-16 text-white bg-transparent"
+                            />
+                            <div className="absolute top-0 right-0 p-1 h-full">
+                                <button
+                                    onClick={handleMaxDeposit}
+                                    className="text-black bg-gradient border border-yellow border-yellow px-8 h-full rounded-full font-semibold transition-all hover:opacity-80">
+                                    최대
+                                </button>
+                            </div>
                         </div>
                         <div className="item col-span-3">
                             <button className="text-yellow font-semibold text-center h-12 rounded-40 border border-[1.5] border-solid border-yellow w-full !itransition-all hover:text-black hover:bg-yellow">보관하기</button>
                         </div>
                     </div>
                     <div className="grid grid-cols-12 gap-6 px-5 mb-5 last:mb-0">
-                        <div className="item col-span-3">
-                            <span className="text-white font-bold flex items-center h-full">꺼내기  </span>
+                        <div className="item col-span-2">
+                            <span className="text-white font-bold flex items-center h-full">꺼내기 </span>
                         </div>
-                        <div className="item col-span-6">
-                            <input type="text" placeholder="숫자만 입력" className="w-full h-12 px-4 border border-solid border-[#FFFFFF80] rounded-40 font-regular text-16"/>
+                        <div className="item col-span-7 relative">
+                            <input
+                                type="text"
+                                placeholder="숫자만 입력"
+                                value={withdrawAmount}
+                                onChange={(e) => handleInputChange(e.target.value, setWithdrawAmount)}
+                                className="w-full h-12 px-4 border border-solid border-[#FFFFFF80] rounded-40 font-regular text-16 text-white bg-transparent"
+                            />
+                            <div className="absolute top-0 right-0 p-1 h-full">
+                                <button
+                                    onClick={handleMaxWithdraw}
+                                    className="text-black bg-gradient border border-yellow border-yellow px-8 h-full rounded-full font-semibold transition-all hover:opacity-80">
+                                    최대
+                                </button>
+                            </div>
                         </div>
                         <div className="item col-span-3">
                             <button className="text-yellow font-semibold text-center h-12 rounded-40 border border-[1.5] border-solid border-yellow w-full !itransition-all hover:text-black hover:bg-yellow">꺼내기</button>
@@ -59,7 +115,6 @@ const InfoUser: React.FC<InfoUserProps> = ({ onBack }) => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };

@@ -82,6 +82,7 @@ const LoginSuccess: React.FC = () => {
                 </div>
                 <div className="pt-2 px-6 flex items-center gap-2 font-semibold">
                     <button
+                        onClick={() => openModal('checkin')}
                         className="relative text-yellow transition-all hover:scale-[1.04]"
                     >
                         <img src="/images/btn-main.png" className="" alt=""/>
