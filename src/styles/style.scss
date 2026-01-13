@@ -148,3 +148,24 @@ body {
     background-color: rgb(255 255 255/50%);
   }
 }
+
+.text-jackpot {
+  background: linear-gradient(45deg, #ffffff, #ffffff, #FFBF07, #ffffff, #FFE086 );
+  background-size: 260% 260%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 3s ease infinite, scaleHeartbeat 1s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

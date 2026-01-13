@@ -80,7 +80,8 @@ const InfoUser: React.FC<InfoUserProps> = ({ onBack }) => {
                             <div className="absolute top-0 right-0 p-1 h-full">
                                 <button
                                     onClick={handleMaxDeposit}
-                                    className="text-black bg-gradient border border-yellow border-yellow px-8 h-full rounded-full font-semibold transition-all hover:opacity-80">
+                                    disabled
+                                    className="text-black bg-white border border-white px-8 h-full rounded-full font-semibold transition-all opacity-70">
                                     최대
                                 </button>
                             </div>
