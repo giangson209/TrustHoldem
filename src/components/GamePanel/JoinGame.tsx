@@ -26,7 +26,7 @@ const TableList: React.FC = () => {
                     </h2>
                     <div className="item relative">
                         <img src="/images/jackpot.png" alt=""/>
-                        <span className="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-38 pl-[32%] text-jackpot pt-1">99,999,999,999 G</span>
+                        <span className="absolute top-[-6px] left-0 w-full h-full flex items-center justify-center font-bold text-38 pl-[30%] text-jackpot">99,999,999,999 G</span>
                     </div>
                     <button
                         onClick={() => setShowTableInfo(true)}
