@@ -34,6 +34,7 @@ export default function AutoScaleLayout({ children }) {
 
     return (
         <div
+            className="auto-scale-modal"
             style={{
                 position: "fixed",
                 top: 0,
@@ -45,6 +46,7 @@ export default function AutoScaleLayout({ children }) {
                 justifyContent: "center",
                 alignItems: "center",
                 zIndex: 9999,
+                pointerEvents: "none",
             }}
         >
             <div
@@ -52,6 +54,7 @@ export default function AutoScaleLayout({ children }) {
                 style={{
                     width: "1920px",
                     transformOrigin: "center center",
+                    pointerEvents: "none",
                 }}
             >
                 {children}

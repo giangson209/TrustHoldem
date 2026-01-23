@@ -169,3 +169,12 @@ body {
     background-position: 0% 50%;
   }
 }
+
+.auto-scale-modal {
+  .wraper-main {
+    pointer-events: none;
+    > * {
+      pointer-events: auto;
+    }
+  }
+}

@@ -161,4 +161,11 @@ body input:focus {
   }
 }
 
+.auto-scale-modal .wraper-main {
+  pointer-events: none;
+}
+.auto-scale-modal .wraper-main > * {
+  pointer-events: auto;
+}
+
 /*# sourceMappingURL=style.css.map */
