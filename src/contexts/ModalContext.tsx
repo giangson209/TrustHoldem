@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-type ModalType = 'about' | 'faq' | 'contact' | 'rule' | 'refill' | 'exchange' | 'contactrequess' | 'contacttelegram' | 'withdrawmembership' | 'infomation' | 'changepass' | 'compexchange' | 'inforoomtable' | 'login' | 'logintable' | 'messages' | 'withdrawalsettings' | 'checkin' | null;
+type ModalType = 'about' | 'faq' | 'contact' | 'rule' | 'refill' | 'exchange' | 'contactrequess' | 'contacttelegram' | 'withdrawmembership' | 'infomation' | 'changepass' | 'compexchange' | 'inforoomtable' | 'login' | 'logintable' | 'messages' | 'withdrawalsettings' | 'checkin' | 'tournament' | 'ruletournament' | 'completetournament' | 'canceltournament' | 'notmoneytournament' | null;
 
 interface ModalContextType {
     activeModal: ModalType;
