@@ -322,7 +322,7 @@ body input:focus {
     transform: rotateX(90deg);
     opacity: 0;
   }
-  51% { 
+  51% {
     opacity: 1;
   }
   100% {
@@ -339,7 +339,7 @@ body input:focus {
 }
 
 .bg-gradient-game {
-  background-image: linear-gradient(to bottom right, #ae1a1ca3, #d22b2ead, #cc621bc9) !important;
-} 
+  background-image: linear-gradient(to bottom right, #ae1a1c, #d22b2e, #cc621b);
+}
 
 /*# sourceMappingURL=style.css.map */

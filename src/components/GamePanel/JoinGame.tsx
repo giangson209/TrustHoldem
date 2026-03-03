@@ -39,17 +39,24 @@ const TableList: React.FC = () => {
                         </button>
                     </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 pb-8 pl-9">
+                {/* <div className="grid grid-cols-3 gap-4 pb-8 pl-9"> */}
+                <div className="grid grid-cols-4 gap-4 pb-8 pl-9">
                     <div className="item item-game relative text-center transition-all hover:scale-[1.04] overflow-hidden rounded-24 border border-yellow">
                         <img src="/images/game-1.png" className="w-full h-42 object-cover" alt=""/>
                         <div className="info flex items-center justify-center w-full h-full absolute z-2 top-0 left-0 text-yellow font-bold text-28">
                             <p>빠른 입장</p>
                         </div>
                     </div>
-                    <div className="item item-game relative text-center transition-all hover:scale-[1.04] overflow-hidden rounded-24 border border-yellow">
+                    <div className="item item-game relative text-center transition-all hover:scale-[1.04] overflow-hidden rounded-24 border border-yellow cursor-pointer">
                         <img src="/images/game-2.png" className="w-full h-42 object-cover" alt=""/>
                         <div className="info flex items-center justify-center w-full h-full absolute z-2 top-0 left-0 text-yellow font-bold text-28">
                             <p>관전하기</p>
+                        </div>
+                    </div>
+                    <div className="item item-game relative text-center transition-all hover:scale-[1.04] overflow-hidden rounded-24 border border-yellow cursor-pointer">
+                        <img src="/images/game-2.png" className="w-full h-42 object-cover" alt=""/>
+                        <div className="info flex items-center justify-center w-full h-full absolute z-2 top-0 left-0 text-yellow font-bold text-28 bg-gradient-game text-white">
+                            <p>토너먼트 <br />관전하기</p>
                         </div>
                     </div>
                     <div
